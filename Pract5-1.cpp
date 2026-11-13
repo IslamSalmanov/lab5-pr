@@ -1,25 +1,12 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 int main(){
     int n;
     cout << "Введите число: ";
     cin >> n;
-    int c=0;
-    int s=0;
-    int pr=1;
+    int f=n;
     int r=0;
-    while(n>0){
-        int d=n%10;
-        c+=1;
-        s+=d;
-        pr*=d;
-        r=r*10+d;
-        n/=10;
-    }
-    cout << "Количество символов: " << c << "\n";
-    cout << "Сумма цифр: " << s << "\n";
-    cout << "Произведение цифр: " << pr << "\n";
-    cout << "Перевернутое число: " << r << "\n";
-    return 0;
+    while(n>0){ r=r*10+(n%10); n/=10;}
+    if(r==f){cout << "Число является палиндромом" << "\n"; return 0;}
+    else{cout << "Число не является палиндромом" << "\n"; return 0;}
 }
