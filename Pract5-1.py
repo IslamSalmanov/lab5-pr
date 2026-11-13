@@ -1,15 +1,16 @@
-n = int(input("Введите число N: "))
-print("Прямоугольник:")
-for i in range(n):
-    print("*" * n)
-print("Треугольник:")
-for i in range(1, n + 1):
-    print("*" * i)
-print("Ёлочка:")
-for i in range(1, n + 1):
-    print(" " * (n - i) + "*" * (2 * i - 1))
-print("Ромб:")
-for i in range(1, n + 1):
-    print(" " * (n - i) + "*" * (2 * i - 1))
-for i in range(n - 1, 0, -1):
-    print(" " * (n - i) + "*" * (2 * i - 1))
+try:
+    n = int(input("Введите число: "))
+    s = 1
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            s += i
+            if i != n // i:
+                s += n // i
+        i += 1
+    if s == n and n > 1:
+        print("Число совершенное")
+    else:
+        print("Число несовершенное")
+except ValueError:
+    print("Это не число")
