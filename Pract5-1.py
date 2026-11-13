@@ -1,10 +1,15 @@
-n = int(input("Введите число: "))
-f = n
-r = 0
-while n > 0:
-    r = r * 10 + (n % 10)
-    n //= 10
-if f == r:
-    print("Число является палиндромом")
-else:
-    print("Число не является палиндромом")
+n = int(input("Введите число N: "))
+print("Прямоугольник:")
+for i in range(n):
+    print("*" * n)
+print("Треугольник:")
+for i in range(1, n + 1):
+    print("*" * i)
+print("Ёлочка:")
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+print("Ромб:")
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+for i in range(n - 1, 0, -1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
