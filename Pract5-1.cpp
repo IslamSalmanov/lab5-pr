@@ -1,26 +1,25 @@
 #include <iostream>
-#include <vector>
+#include <iomanip>
 using namespace std;
 int main(){
     int n;
-    cout << "Введите число N: ";
+    cout << "Введите число: ";
     cin >> n;
-    int f=n;
-    vector<int> m;
-    int d=2;
-    while(d*d<=n){
-        while(n%d==0){
-            m.push_back(d);
-            n/=d;          
-        }
-        d+=1;
+    int c=0;
+    int s=0;
+    int pr=1;
+    int r=0;
+    while(n>0){
+        int d=n%10;
+        c+=1;
+        s+=d;
+        pr*=d;
+        r=r*10+d;
+        n/=10;
     }
-    if(n>1){m.push_back(n);}
-    cout << f << " = ";
-    for(size_t i=0; i<m.size(); ++i){
-        if(i>0) cout << " x ";
-        cout << m[i];        
-    }
-    cout << "\n";            
+    cout << "Количество символов: " << c << "\n";
+    cout << "Сумма цифр: " << s << "\n";
+    cout << "Произведение цифр: " << pr << "\n";
+    cout << "Перевернутое число: " << r << "\n";
     return 0;
 }
