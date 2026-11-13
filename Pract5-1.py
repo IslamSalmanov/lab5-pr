@@ -1,8 +1,12 @@
-n = int(input("Введите число N: "))
-a, b = 0, 1
-s = " "
-print(f"Первые {n} чисел Фибоначчи")
-for i in range(n):
-    s += str(a) + " "
-    a, b = b, a + b
-print(s)
+n = int(input("Введите ваше число N: "))
+f = n
+m = []
+d = 2
+while d * d <= n:
+    while n % d == 0:
+        m.append(str(d))
+        n //= d
+    d += 1
+if n > 1:
+    m.append(str(n))
+print(f, "=", " × ".join(m))
