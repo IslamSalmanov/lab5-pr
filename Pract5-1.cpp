@@ -1,16 +1,15 @@
 #include <iostream>
-#include <iomanip>
+#include <string>
 using namespace std;
 int main(){
     int n;
-    cout << "Введите ваше число N: ";
+    cout << "Введите число N: ";
     cin >> n;
-    long long s=0;
-    long long sk=0;
-    long long f=1;
-    for(int i=1; i<=n; ++i){s+=i; sk+=i*i; f*=i;}
-    cout << "Сумма чисел: " << s << "\n";
-    cout << "Факториал: " << f << "\n";
-    cout << "Сумма квадратов: " << sk << "\n";
+    string s="";
+    long long a=0;
+    long long b=1;
+    for(int i=1; i<=n; ++i){s+=to_string(a)+" "; long long x=a+b; a=b; b=x;}
+    cout << "Первые " << n << " чисел Фибоначчи" << "\n";
+    cout << s << "\n";
     return 0;
 }
